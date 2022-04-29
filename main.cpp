@@ -1,8 +1,11 @@
 #include <QCoreApplication>
+#include "subject.h"
 
-int main(int argc, char *argv[])
+
+int main()
 {
-    QCoreApplication a(argc, argv);
+    QString fileName = "test.txt";
+    ConcreteProduct testFile(fileName);
 
-    return a.exec();
+    return 0;
 }
