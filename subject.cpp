@@ -1,17 +1,17 @@
 #include "subject.h"
 #include <algorithm>
 
-void ASubject::Attach(ObFile *product)
+void ASubject::Attach(ObFile *product) // Добавление наблюдателя
 {
     list.push_back(product);
 }
 
-void ASubject::Detach(ObFile *product)
+void ASubject::Detach(ObFile *product) // Отвязка наблюдателя
 {
     list.erase(std::remove(list.begin(), list.end(), product), list.end());
 }
 
-void ASubject::Notify(bool fileExist, int size)
+void ASubject::Notify(bool fileExist, int size) // Обновление данных в наблюдателях
 {
     for (int i = 0; i < list.size(); i++)
     {
@@ -22,7 +22,7 @@ void ASubject::Notify(bool fileExist, int size)
     }
 }
 
-void ConcreteProduct::updateObservers()
+void ConcreteProduct::updateObservers() // Обновление данных в наблюдателях
 {
     Notify(File.exists(),File.size());
 }

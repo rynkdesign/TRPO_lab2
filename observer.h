@@ -1,6 +1,7 @@
 #ifndef OBSERVER_H
 #define OBSERVER_H
 #include <iostream>
+#include <QString>
 
 // Класс интерфейс файла для наблюдателя
 class IObserver
@@ -12,12 +13,12 @@ public:
 // Класс создания файла для наблюдателя
 class ObFile :public IObserver
 {
-    std::string name; // Имя файла
+    QString name; // Имя файла
     bool fileExist; // Существует ли файл
     int size;  // Размер файла
 
 public:
-    ObFile(std:: string name); // Конструктор для файла
+    ObFile(QString name); // Конструктор для файла
     void Update(bool fileExist, int size); // Обновление файла
 };
 

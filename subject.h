@@ -4,23 +4,24 @@
 #include <vector>
 #include "observer.h"
 #include <QFile>
+#include <QString>
 
 class ASubject
 {
     std::vector<ObFile*> list; // Список всех файлов (наблюдателей)
 public:
-    void Attach(ObFile *product);
-    void Detach(ObFile *product);
-    void Notify(bool fileExist, int size);
+    void Attach(ObFile *product); // Добавление наблюдателя
+    void Detach(ObFile *product); // Отвязка наблюдателя
+    void Notify(bool fileExist, int size); // Обновление данных в наблюдателях
 };
 
 #endif // SUBJECT_H
 
 class ConcreteProduct : public ASubject
 {
-    QFile File;
+    QFile File; // Объект файла
 
 public:
-    ConcreteProduct(const QString& fileName): File(fileName) {};
-    void updateObservers();
+    ConcreteProduct(const QString& fileName): File(fileName) {}; // Конструктор файла
+    void updateObservers(); // Обновление данных в наблюдателях
 };
