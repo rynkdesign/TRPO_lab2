@@ -1,12 +1,13 @@
 #include "subject.h"
 #include <algorithm>
 
-void ASubject::Attach(ObFile *product) // Добавление наблюдателя
+void ASubject::Attach(IObserver *product) // Добавление наблюдателя
 {
     list.push_back(product);
 }
 
-void ASubject::Detach(ObFile *product) // Отвязка наблюдателя
+
+void ASubject::Detach(IObserver *product) // Отвязка наблюдателя
 {
     list.erase(std::remove(list.begin(), list.end(), product), list.end());
 }

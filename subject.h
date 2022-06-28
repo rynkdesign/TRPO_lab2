@@ -8,11 +8,12 @@
 
 class ASubject
 {
-    std::vector<ObFile*> list; // Список всех файлов (наблюдателей)
+    std::vector<IObserver*> list; // Список всех файлов (наблюдателей)
 public:
-    void Attach(ObFile *product); // Добавление наблюдателя
-    void Detach(ObFile *product); // Отвязка наблюдателя
+    void Attach(IObserver *product); // Добавление наблюдателя
+    void Detach(IObserver *product); // Отвязка наблюдателя
     void Notify(bool fileExist, int size); // Обновление данных в наблюдателях
+
 };
 
 #endif // SUBJECT_H
