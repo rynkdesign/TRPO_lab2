@@ -21,4 +21,5 @@ HEADERS += \
     observer.h \
     subject.h
 
-DISTFILES +=
+DISTFILES += \
+    test.txt
